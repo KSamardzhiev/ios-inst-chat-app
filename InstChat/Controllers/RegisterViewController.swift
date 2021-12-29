@@ -15,7 +15,10 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToChatAfterRegister", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -15,7 +15,10 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToChatAfterLogin", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

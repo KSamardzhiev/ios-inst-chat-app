@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ALG-UW-NXh">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -17,11 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 InstChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8K-lW-AFU">
-                                <rect key="frame" x="118" y="441.33333333333331" width="192.33333333333337" height="43.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 InstChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8K-lW-AFU" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                <rect key="frame" x="118.00000000000001" y="441.33333333333331" width="192.33333333333337" height="43.666666666666686"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 <color key="textColor" name="textColorSet"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="charInterval">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-wh-hdf">
                                 <rect key="frame" x="0.0" y="804" width="428" height="88"/>
@@ -37,6 +42,9 @@
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                             <color key="baseForegroundColor" red="0.25882352939999997" green="0.28235294119999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="yU1-7g-RtM" kind="show" id="9NK-s0-lUe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxe-JQ-3Ue">
                                         <rect key="frame" x="0.0" y="48" width="428" height="40"/>
@@ -47,8 +55,11 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Register">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                            <color key="baseForegroundColor" name="bacgroundColorSet"/>
+                                            <color key="baseForegroundColor" name="backgroundColorSet"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="qKl-Df-gHD" kind="show" id="cqq-R6-BNa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -63,10 +74,14 @@
                             <constraint firstAttribute="trailing" secondItem="6JC-wh-hdf" secondAttribute="trailing" id="sWA-Rk-KvF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FoO-6e-Tcu"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="L8K-lW-AFU" id="Wbq-f5-nBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="87"/>
+            <point key="canvasLocation" x="919.62616822429902" y="86.825053995680349"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="4pl-yH-gCb">
@@ -77,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XxT-C9-jrE">
-                                <rect key="frame" x="10" y="54" width="408" height="165"/>
+                                <rect key="frame" x="10" y="98" width="408" height="165"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSj-m4-65o">
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="45"/>
@@ -111,6 +126,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log In">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="yU1-7g-RtM" eventType="touchUpInside" id="Fgn-Jy-qe3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -123,15 +141,19 @@
                             <constraint firstItem="cc2-Ub-xyE" firstAttribute="trailing" secondItem="XxT-C9-jrE" secondAttribute="trailing" constant="10" id="mYE-fW-Hmg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2q2-o9-s1n"/>
+                    <connections>
+                        <segue destination="PNt-aA-NAy" kind="show" identifier="goToChatAfterLogin" id="zSh-Ek-alh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhs-cS-zv0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="595"/>
+            <point key="canvasLocation" x="1734.1121495327102" y="594.81641468682506"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="zLw-gW-gnl">
             <objects>
-                <viewController id="PNt-aA-NAy" sceneMemberID="viewController">
+                <viewController id="PNt-aA-NAy" customClass="ChatViewController" customModule="InstChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sD7-Gz-Awi">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,10 +210,11 @@
                             <constraint firstItem="ndj-LR-2Ts" firstAttribute="trailing" secondItem="vFl-Db-kah" secondAttribute="trailing" id="wjI-cW-a3E"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Emg-pE-H00"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSs-vj-5jR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724.1900647948166" y="200.46728971962617"/>
+            <point key="canvasLocation" x="2622.897196261682" y="200.21598272138232"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="P8q-Pm-7CZ">
@@ -202,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ni8-K9-uRH">
-                                <rect key="frame" x="10" y="54" width="408" height="165"/>
+                                <rect key="frame" x="10" y="98" width="408" height="165"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-xi-bqY">
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="45"/>
@@ -236,6 +259,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Register">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerButtonPressed:" destination="qKl-Df-gHD" eventType="touchUpInside" id="vJ4-Lj-3Wm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -248,17 +274,39 @@
                             <constraint firstItem="cXj-7W-QVi" firstAttribute="trailing" secondItem="Ni8-K9-uRH" secondAttribute="trailing" constant="10" id="cVq-pw-fuZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X5f-FQ-qIR"/>
+                    <connections>
+                        <segue destination="PNt-aA-NAy" kind="show" identifier="goToChatAfterRegister" id="5rV-JH-jNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EX7-16-oQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="835" y="-298"/>
+            <point key="canvasLocation" x="1734.1121495327102" y="-298.05615550755942"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aYh-3a-wAj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ALG-UW-NXh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PCK-Wm-SYr">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KtU-gd-bbW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NS-t2-wx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19.626168224299064" y="86.825053995680349"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zSh-Ek-alh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
-        <namedColor name="bacgroundColorSet">
-            <color red="0.95686274510000002" green="0.93333333330000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="backgroundColorSet">
             <color red="0.9570000171661377" green="0.93300002813339233" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

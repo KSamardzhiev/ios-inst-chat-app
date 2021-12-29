@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67F5C1FEC6A1110A4336C807 /* Pods_InstChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */; };
 		F8272412277B8FF300C3A1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8272411277B8FF300C3A1BA /* AppDelegate.swift */; };
 		F8272414277B8FF300C3A1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8272413277B8FF300C3A1BA /* SceneDelegate.swift */; };
 		F8272416277B8FF300C3A1BA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8272415277B8FF300C3A1BA /* WelcomeViewController.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11792290909C3479C3115B67 /* Pods-InstChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstChat.release.xcconfig"; path = "Target Support Files/Pods-InstChat/Pods-InstChat.release.xcconfig"; sourceTree = "<group>"; };
+		E3A2B47AD413A69DC125BC1E /* Pods-InstChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstChat.debug.xcconfig"; path = "Target Support Files/Pods-InstChat/Pods-InstChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F827240E277B8FF300C3A1BA /* InstChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8272411277B8FF300C3A1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8272413277B8FF300C3A1BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		F8272446277B978A00C3A1BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F8272448277B97CC00C3A1BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F827244A277B990000C3A1BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F5C1FEC6A1110A4336C807 /* Pods_InstChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D2C71526CBD18A765DAE61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3A2B47AD413A69DC125BC1E /* Pods-InstChat.debug.xcconfig */,
+				11792290909C3479C3115B67 /* Pods-InstChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7640DC91218C435A2C6D5417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8272405277B8FF300C3A1BA = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +114,8 @@
 				F827242A277B8FF700C3A1BA /* InstChatTests */,
 				F8272434277B8FF700C3A1BA /* InstChatUITests */,
 				F827240F277B8FF300C3A1BA /* Products */,
+				01D2C71526CBD18A765DAE61 /* Pods */,
+				7640DC91218C435A2C6D5417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F827243B277B8FF700C3A1BA /* Build configuration list for PBXNativeTarget "InstChat" */;
 			buildPhases = (
+				9550F1D603576033C6385600 /* [CP] Check Pods Manifest.lock */,
 				F827240A277B8FF300C3A1BA /* Sources */,
 				F827240B277B8FF300C3A1BA /* Frameworks */,
 				F827240C277B8FF300C3A1BA /* Resources */,
+				F57D120D5C463A223DFA81C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +307,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9550F1D603576033C6385600 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57D120D5C463A223DFA81C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstChat/Pods-InstChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstChat/Pods-InstChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstChat/Pods-InstChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F827240A277B8FF300C3A1BA /* Sources */ = {
@@ -466,6 +535,7 @@
 		};
 		F827243C277B8FF700C3A1BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A2B47AD413A69DC125BC1E /* Pods-InstChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -494,6 +564,7 @@
 		};
 		F827243D277B8FF700C3A1BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11792290909C3479C3115B67 /* Pods-InstChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
