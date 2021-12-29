@@ -12,4 +12,11 @@ struct Constants {
     
     static let reusableCell = "ReuseableCell"
     static let messageCellNib = "MessageCell"
+    
+    struct FStore {
+        static let messagesCollection = "messages"
+        static let messageSenderKey = "sender"
+        static let messageBodyKey = "body"
+        static let messageDateKey = "date"
+    }
 }

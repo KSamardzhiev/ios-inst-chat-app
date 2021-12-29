@@ -187,6 +187,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system">
                                                     <color key="baseForegroundColor" name="backgroundColorSet"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="sendButtonPressed:" destination="PNt-aA-NAy" eventType="touchUpInside" id="lGQ-de-rr4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -220,6 +223,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageTextField" destination="lXd-v4-Wfd" id="QaJ-q7-NUq"/>
                         <outlet property="tableView" destination="vNg-YQ-vd5" id="jEg-cv-PUz"/>
                     </connections>
                 </viewController>

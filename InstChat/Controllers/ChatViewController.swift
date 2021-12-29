@@ -10,12 +10,11 @@ import Firebase
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    let messages: [Message] = [
-        Message(sender: "1@2.com", body: "Hi"),
-        Message(sender: "a@b.com", body: "Hello!"),
-        Message(sender: "1@2.com", body: "What's up?")
-    ]
+    var messages: [Message] = []
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,48 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: Constants.messageCellNib, bundle: nil), forCellReuseIdentifier: Constants.reusableCell)
+        
+        loadMessages()
+    }
+    
+    func loadMessages() {
+        db.collection(Constants.FStore.messagesCollection)
+            .order(by: Constants.FStore.messageDateKey)
+            .addSnapshotListener { qSnapshot, error in
+            if let e = error {
+                print("Unable to fetch messages data: \(e)")
+            } else {
+                self.messages = []
+                if let documents = qSnapshot?.documents {
+                    for doc in documents {
+                        if let mSender = doc[Constants.FStore.messageSenderKey] as? String, let mBody = doc[Constants.FStore.messageBodyKey] as? String {
+                            self.messages.append(Message(sender: mSender, body: mBody))
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(Constants.FStore.messagesCollection).addDocument(data: [
+                Constants.FStore.messageSenderKey: messageSender,
+                Constants.FStore.messageBodyKey: messageBody,
+                Constants.FStore.messageDateKey: Date().timeIntervalSince1970
+            ]) { error in
+                if let e = error {
+                    print("Unable to save data to Firestore: \(e)")
+                } else {
+                    print("Successfully saved data")
+                }
+            }
+        }
     }
     
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
