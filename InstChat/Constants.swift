@@ -11,4 +11,5 @@ struct Constants {
     static let loginSegue = "goToChatAfterLogin"
     
     static let reusableCell = "ReuseableCell"
+    static let messageCellNib = "MessageCell"
 }

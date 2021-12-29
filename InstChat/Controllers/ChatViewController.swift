@@ -24,6 +24,8 @@ class ChatViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: Constants.messageCellNib, bundle: nil), forCellReuseIdentifier: Constants.reusableCell)
     }
     
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
@@ -52,9 +54,9 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCell)
-        cell?.textLabel?.text = messages[indexPath.row].body
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCell) as! MessageCell
+        cell.messageLabel.text = messages[indexPath.row].body
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
