@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📱 InstChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8K-lW-AFU" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="118" y="441.33333333333331" width="192.33333333333337" height="43.666666666666686"/>
+                                <rect key="frame" x="118.00000000000001" y="441.33333333333331" width="192.33333333333337" height="43.666666666666686"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                 <color key="textColor" name="textColorSet"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                                             <constraint firstAttribute="height" constant="45" id="dlp-4v-li0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="20"/>
                                         </userDefinedRuntimeAttributes>
@@ -114,7 +114,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.28235294119999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-Z5-jmR">
                                         <rect key="frame" x="0.0" y="120" width="408" height="45"/>
@@ -143,6 +143,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2q2-o9-s1n"/>
                     <connections>
+                        <outlet property="emailTextField" destination="dSj-m4-65o" id="ipI-zP-xLh"/>
+                        <outlet property="passwordTextField" destination="xL6-89-7us" id="74E-Jx-5x1"/>
                         <segue destination="PNt-aA-NAy" kind="show" identifier="goToChatAfterLogin" id="zSh-Ek-alh"/>
                     </connections>
                 </viewController>
@@ -234,7 +236,7 @@
                                             <constraint firstAttribute="height" constant="45" id="hPW-vt-bqQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="20"/>
                                         </userDefinedRuntimeAttributes>
@@ -247,7 +249,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.28235294119999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhA-Gl-CaG">
                                         <rect key="frame" x="0.0" y="120" width="408" height="45"/>
@@ -276,6 +278,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="X5f-FQ-qIR"/>
                     <connections>
+                        <outlet property="emailTextField" destination="bbV-xi-bqY" id="3iQ-ZK-gSR"/>
+                        <outlet property="passwordTextField" destination="r8o-8x-TgQ" id="XcY-dr-NE5"/>
                         <segue destination="PNt-aA-NAy" kind="show" identifier="goToChatAfterRegister" id="5rV-JH-jNH"/>
                     </connections>
                 </viewController>
@@ -302,6 +306,11 @@
             <point key="canvasLocation" x="19.626168224299064" y="86.825053995680349"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="L8K-lW-AFU">
+            <size key="intrinsicContentSize" width="192.33333333333334" height="43.666666666666664"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="zSh-Ek-alh"/>
     </inferredMetricsTieBreakers>
