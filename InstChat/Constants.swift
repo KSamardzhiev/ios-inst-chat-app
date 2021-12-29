@@ -9,4 +9,6 @@ struct Constants {
     static let appName = "📱 InstChat"
     static let registerSegue = "goToChatAfterRegister"
     static let loginSegue = "goToChatAfterLogin"
+    
+    static let reusableCell = "ReuseableCell"
 }

@@ -25,6 +25,7 @@
 		F8451522277C85EC00201CB7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F8451521277C85EC00201CB7 /* FirebaseAuth */; };
 		F8451524277C85EC00201CB7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8451523277C85EC00201CB7 /* FirebaseFirestore */; };
 		F8451527277C967D00201CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8451526277C967D00201CB7 /* Constants.swift */; };
+		F845152A277C9D0500201CB7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8451529277C9D0500201CB7 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F845151E277C821200201CB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8451525277C8A2200201CB7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F8451526277C967D00201CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F8451529277C9D0500201CB7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,8 +144,9 @@
 			children = (
 				F8272411277B8FF300C3A1BA /* AppDelegate.swift */,
 				F8272413277B8FF300C3A1BA /* SceneDelegate.swift */,
-				F8272444277B970500C3A1BA /* Controllers */,
+				F8451528277C9CE200201CB7 /* Models */,
 				F8272445277B970F00C3A1BA /* Views */,
+				F8272444277B970500C3A1BA /* Controllers */,
 				F827241D277B8FF600C3A1BA /* Assets.xcassets */,
 				F827241F277B8FF600C3A1BA /* LaunchScreen.storyboard */,
 				F8272422277B8FF600C3A1BA /* Info.plist */,
@@ -189,6 +192,14 @@
 				F8272417277B8FF300C3A1BA /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F8451528277C9CE200201CB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8451529277C9D0500201CB7 /* Message.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				F8272449277B97CC00C3A1BA /* LoginViewController.swift in Sources */,
 				F8272416277B8FF300C3A1BA /* WelcomeViewController.swift in Sources */,
 				F8272447277B978A00C3A1BA /* RegisterViewController.swift in Sources */,
+				F845152A277C9D0500201CB7 /* Message.swift in Sources */,
 				F827244B277B990000C3A1BA /* ChatViewController.swift in Sources */,
 				F8272412277B8FF300C3A1BA /* AppDelegate.swift in Sources */,
 				F8272414277B8FF300C3A1BA /* SceneDelegate.swift in Sources */,

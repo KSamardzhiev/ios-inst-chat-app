@@ -10,10 +10,20 @@ import Firebase
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    let messages: [Message] = [
+        Message(sender: "1@2.com", body: "Hi"),
+        Message(sender: "a@b.com", body: "Hello!"),
+        Message(sender: "1@2.com", body: "What's up?")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.appName
         navigationItem.hidesBackButton = true
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
@@ -35,4 +45,27 @@ class ChatViewController: UIViewController {
     }
     */
 
+}
+
+//MARK: - UITableViewDataSource
+
+extension ChatViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCell)
+        cell?.textLabel?.text = messages[indexPath.row].body
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+}
+
+//MARK: - UITableViewDelegate
+
+extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row \(indexPath.row) selected")
+    }
 }
