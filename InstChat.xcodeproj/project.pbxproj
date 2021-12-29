@@ -21,6 +21,9 @@
 		F8272447277B978A00C3A1BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8272446277B978A00C3A1BA /* RegisterViewController.swift */; };
 		F8272449277B97CC00C3A1BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8272448277B97CC00C3A1BA /* LoginViewController.swift */; };
 		F827244B277B990000C3A1BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827244A277B990000C3A1BA /* ChatViewController.swift */; };
+		F845151F277C821200201CB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F845151E277C821200201CB7 /* GoogleService-Info.plist */; };
+		F8451522277C85EC00201CB7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F8451521277C85EC00201CB7 /* FirebaseAuth */; };
+		F8451524277C85EC00201CB7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8451523277C85EC00201CB7 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,8 @@
 		F8272446277B978A00C3A1BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F8272448277B97CC00C3A1BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F827244A277B990000C3A1BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F845151E277C821200201CB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8451525277C8A2200201CB7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +74,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F5C1FEC6A1110A4336C807 /* Pods_InstChat.framework in Frameworks */,
+				F8451522277C85EC00201CB7 /* FirebaseAuth in Frameworks */,
+				F8451524277C85EC00201CB7 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +102,6 @@
 				E3A2B47AD413A69DC125BC1E /* Pods-InstChat.debug.xcconfig */,
 				11792290909C3479C3115B67 /* Pods-InstChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,7 +145,9 @@
 				F827241D277B8FF600C3A1BA /* Assets.xcassets */,
 				F827241F277B8FF600C3A1BA /* LaunchScreen.storyboard */,
 				F8272422277B8FF600C3A1BA /* Info.plist */,
+				F845151E277C821200201CB7 /* GoogleService-Info.plist */,
 				F827241A277B8FF300C3A1BA /* InstChat.xcdatamodeld */,
+				F8451525277C8A2200201CB7 /* Config.xcconfig */,
 			);
 			path = InstChat;
 			sourceTree = "<group>";
@@ -198,6 +206,10 @@
 			dependencies = (
 			);
 			name = InstChat;
+			packageProductDependencies = (
+				F8451521277C85EC00201CB7 /* FirebaseAuth */,
+				F8451523277C85EC00201CB7 /* FirebaseFirestore */,
+			);
 			productName = InstChat;
 			productReference = F827240E277B8FF300C3A1BA /* InstChat.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +282,9 @@
 				Base,
 			);
 			mainGroup = F8272405277B8FF300C3A1BA;
+			packageReferences = (
+				F8451520277C85EC00201CB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F827240F277B8FF300C3A1BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8272421277B8FF600C3A1BA /* LaunchScreen.storyboard in Resources */,
+				F845151F277C821200201CB7 /* GoogleService-Info.plist in Resources */,
 				F827241E277B8FF600C3A1BA /* Assets.xcassets in Resources */,
 				F8272419277B8FF300C3A1BA /* Main.storyboard in Resources */,
 			);
@@ -419,6 +435,7 @@
 /* Begin XCBuildConfiguration section */
 		F8272439277B8FF700C3A1BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8451525277C8A2200201CB7 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -480,6 +497,7 @@
 		};
 		F827243A277B8FF700C3A1BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8451525277C8A2200201CB7 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -707,6 +725,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8451520277C85EC00201CB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8451521277C85EC00201CB7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8451520277C85EC00201CB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F8451523277C85EC00201CB7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8451520277C85EC00201CB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F827241A277B8FF300C3A1BA /* InstChat.xcdatamodeld */ = {
