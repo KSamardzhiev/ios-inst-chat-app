@@ -24,6 +24,7 @@
 		F845151F277C821200201CB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F845151E277C821200201CB7 /* GoogleService-Info.plist */; };
 		F8451522277C85EC00201CB7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F8451521277C85EC00201CB7 /* FirebaseAuth */; };
 		F8451524277C85EC00201CB7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8451523277C85EC00201CB7 /* FirebaseFirestore */; };
+		F8451527277C967D00201CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8451526277C967D00201CB7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F827244A277B990000C3A1BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F845151E277C821200201CB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8451525277C8A2200201CB7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F8451526277C967D00201CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDC8B6B5081097D831EC4B92 /* Pods_InstChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				F845151E277C821200201CB7 /* GoogleService-Info.plist */,
 				F827241A277B8FF300C3A1BA /* InstChat.xcdatamodeld */,
 				F8451525277C8A2200201CB7 /* Config.xcconfig */,
+				F8451526277C967D00201CB7 /* Constants.swift */,
 			);
 			path = InstChat;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				F8272412277B8FF300C3A1BA /* AppDelegate.swift in Sources */,
 				F8272414277B8FF300C3A1BA /* SceneDelegate.swift in Sources */,
 				F827241C277B8FF300C3A1BA /* InstChat.xcdatamodeld in Sources */,
+				F8451527277C967D00201CB7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
