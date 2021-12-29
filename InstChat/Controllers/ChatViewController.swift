@@ -44,6 +44,8 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
@@ -64,6 +66,7 @@ class ChatViewController: UIViewController {
                     print("Unable to save data to Firestore: \(e)")
                 } else {
                     print("Successfully saved data")
+                    self.messageTextField.text = ""
                 }
             }
         }
@@ -95,8 +98,23 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCell) as! MessageCell
-        cell.messageLabel.text = messages[indexPath.row].body
+        cell.messageLabel.text = message.body
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.Color.user2ColorSet)
+            cell.messageLabel.textColor = UIColor(named: Constants.Color.user1ColorSet)
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.Color.user1ColorSet)
+            cell.messageLabel.textColor = UIColor(named: Constants.Color.user2ColorSet)
+        }
         return cell
     }
     

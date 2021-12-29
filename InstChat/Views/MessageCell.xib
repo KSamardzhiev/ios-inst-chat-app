@@ -20,11 +20,18 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KnC-Oe-UfD">
                         <rect key="frame" x="10" y="10" width="454" height="82"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user1" translatesAutoresizingMaskIntoConstraints="NO" id="4Lr-yz-fOv">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Vor-9u-Qpc"/>
+                                    <constraint firstAttribute="height" constant="40" id="clG-lc-nfs"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wh2-s3-Ayy">
-                                <rect key="frame" x="0.0" y="0.0" width="394" height="82"/>
+                                <rect key="frame" x="60" y="0.0" width="334" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-cT-SlI">
-                                        <rect key="frame" x="10" y="10" width="374" height="62"/>
+                                        <rect key="frame" x="10" y="10" width="314" height="62"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <color key="textColor" name="backgroundColorSet"/>
                                         <nil key="highlightedColor"/>
@@ -48,7 +55,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" name="backgroundColorSet"/>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="KnC-Oe-UfD" secondAttribute="trailing" constant="10" id="0sQ-AC-1yq"/>
                     <constraint firstAttribute="bottom" secondItem="KnC-Oe-UfD" secondAttribute="bottom" constant="10" id="KbT-jh-IN7"/>
@@ -58,6 +65,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="leftImageView" destination="4Lr-yz-fOv" id="KN6-wn-avF"/>
                 <outlet property="messageBubble" destination="Wh2-s3-Ayy" id="A6w-qr-Jzw"/>
                 <outlet property="messageLabel" destination="mUJ-cT-SlI" id="s1k-a8-roG"/>
                 <outlet property="rightImageView" destination="VDH-z8-7LU" id="EDg-HI-yTd"/>
@@ -66,6 +74,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="user1" width="930" height="930"/>
         <image name="user2" width="932" height="931"/>
         <namedColor name="backgroundColorSet">
             <color red="0.9570000171661377" green="0.93300002813339233" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
